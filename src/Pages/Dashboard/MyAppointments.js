@@ -6,7 +6,6 @@ const MyAppointments = () => {
 
     const [appoinments, setAppoinments] = useState([]);
     const [user] = useAuthState(auth);
-    console.log(user?.email);
     useEffect(() => {
         if (user) {
             fetch(`http://localhost:5000/booking?patient=${user?.email}`)
@@ -18,8 +17,8 @@ const MyAppointments = () => {
     return (
         <div>
             <h2>My appointments: {appoinments.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
